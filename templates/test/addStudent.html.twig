@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add students{% endblock %}
+
+{% block body %}
+
+Add a student to a database:</br>
+    <form action="/save-student" method="post">
+        <input type="text" placeholder="Student's name" name="name">
+        <input type="submit" value="Add student">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List of users!{% endblock %}
+
+{% block body %}
+    This is a list of users:
+    <ul>
+        {# @var users App\Entity\User[] #}
+        {% for user in users %}
+            <li>{{ user.name }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

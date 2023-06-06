@@ -1,0 +1,173 @@
+body {
+    background-color: #d0d0d0;
+    text-align: center;
+    padding: 1px;
+}
+
+header{
+    font-family: "Verdana", "Calibri", "Arial", sans-serif;
+    font-size: 18px;
+    text-align: center;
+    color: papayawhip;
+    backdrop-filter: blur(5px);
+    background-blend-mode: soft-light;
+    background-color: #222022;
+    background-position: center;
+    background-size: cover;
+    padding: 1px;
+
+
+}
+
+h1 {
+    font-family:  "Verdana", "Calibri", "Arial", sans-serif;
+    font-size: 32px;
+}
+h2 {
+    font-family:  "Calibri", "Verdana", "Arial", sans-serif;
+    font-size: 26px;
+}
+
+header > a:link, a:visited, button {
+    background-color: #0270ba;
+    color: white;
+    padding: 10px;
+    border: 30px;
+    border-color: #000000;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+header > a:hover, a:active {
+    background-color: skyblue;
+    color: #e84c16;
+}
+
+grid-container1{
+    display: block;
+    padding: 5px;
+}
+
+img {
+    max-height: 700px;
+    height: 140px;
+    width: 200px;
+    object-fit: cover;
+
+}
+img:hover{
+    opacity: 90%;
+}
+
+
+.box {
+    width: 40%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.2);
+    padding: 35px;
+    border: 2px solid #fff;
+    /*border-radius: 20px/50px;*/
+    background-clip: padding-box;
+    text-align: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    color:  #222022;
+    /*border-radius: 5px;*/
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.popup .close {
+    position: absolute;
+    color:  #222022;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.popup .close:hover {
+    color: brown;
+}
+.popup .content {
+    max-height: 30%;
+    color: #222022;
+    overflow: auto;
+}
+
+
+.lightbox {
+    /* Default to hidden */
+    display: none;
+
+    /* Overlay entire screen */
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* A bit of padding around image */
+    padding: 30px;
+
+    /* Translucent background */
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Unhide the lightbox when it's the target */
+.lightbox:target {
+    display: block;
+}
+
+lightbox > a:link, a:visited, button {
+    background-color: rgba(10 10 10 50);
+    color: white;
+    padding: 10px;
+    border: 30px;
+    border-color: #000000;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+lightbox > a:hover, a:active {
+    background-color: rgba(10 10 10 10);
+    color: rgba(10 10 10 50);
+}
+.lightbox span {
+    /* Full width and height */
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    /* Size and position background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

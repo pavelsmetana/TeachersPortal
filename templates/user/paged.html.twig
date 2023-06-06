@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% if users|length > 0 %}
+    <div>There are {{ users|length }} users.</div>
+
+    {% for item in users %}
+
+        <p>{{ item.name }}</p>
+    {% endfor %}
+
+            {% if previous >= 0 %}
+                <a href="{{ path('app_users_paged', { offset: previous }) }}">Previous</a>
+            {% endif %}
+            {% if next < users|length %}
+                <a href="{{ path('app_users_paged', { offset: next }) }}">Next</a>
+            {% endif %}
+{% else %}
+    <div>No users.</div>
+{% endif %}
+
+{% endblock %}

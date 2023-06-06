@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} Teachers Portal {% endblock %}</title>
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet"/>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <header>
+        {%  block header %}
+
+            <div class="menu">
+                <a href="{{ path('app_students') }}">Студенты</a>
+            </div>
+            <div class="menu">
+                <a href="{{ path('app_users') }}">Users</a>
+            </div>
+            <div class="menu">
+                <a href="{{ path('app_home') }}">Главная</a>
+            </div>
+            <div class="menu">
+                <a href="{{ path('app_users_paged') }}">Пагинация</a>
+            </div>
+            {% if app.user %}
+                <div class="menu">
+                    <a href="{{ path('app_logout') }}">Выйти</a>
+                </div>
+            {% else %}
+                <div class="menu">
+                    <a href="{{ path('app_login') }}">Войти</a>
+                </div>
+
+            {% endif %}
+        {% endblock %}
+    </header>
+
+    <body>
+
+    {% block body %}{% endblock %}
+    </body>
+</html>
